@@ -1,4 +1,4 @@
-import { StreamConfig } from 'motia'
+import { StateStreamConfig } from 'motia'
 import { z } from 'zod'
 
 export const conversationSchema = z.object({
@@ -8,8 +8,8 @@ export const conversationSchema = z.object({
   timestamp: z.string(),
 })
 
-export const config: StreamConfig = {
+export const config: StateStreamConfig = {
   name: 'conversation',
   schema: conversationSchema,
-  baseConfig: { storageType: 'default' },
+  baseConfig: { storageType: 'state' },
 }
